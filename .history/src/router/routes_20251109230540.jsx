@@ -2,15 +2,11 @@ import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import AllModels from "../Pages/AllModels/AllModels";
-import AddHabit from "../Pages/AddHabit/AddHabit"
-import MyHabit from "../Pages/MyHabit/MyHabit"
 //import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Registration";
-import PrivateRoute from "./PrivateRoute";
-import ErrorLoading from "../components/ErrorLoading"
-import Loading from "../Pages/Loading/Loading";
-
+//import PrivateRoute from "./PrivateRoute";
+//import AddModel from "../Pages/AddModel/AddModel";
 //import ModelDetails from "../Pages/ModelDetails/ModelDetails";
 //import UpdateModel from "../Pages/UpdateModel/UpdateModel";
 
@@ -18,7 +14,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    hydrateFallbackElement:<ErrorLoading></ErrorLoading>,
     children: [
       {
         path: "/",
@@ -39,18 +34,10 @@ export const router = createBrowserRouter([
     //     ),
     //   },
       {
-        path: "/add-habit",
+        path: "/add-model",
         element: (
           <PrivateRoute>
-            <AddHabit />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/my-habit",
-        element: (
-          <PrivateRoute>
-            <MyHabit />
+            <AddModel />
           </PrivateRoute>
         ),
       },
@@ -85,8 +72,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "/*",
-    element:<ErrorLoading></ErrorLoading>
-  }
 ]);

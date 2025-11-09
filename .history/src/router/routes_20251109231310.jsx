@@ -86,7 +86,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/*",
+    path: "/error",
     element:<ErrorLoading></ErrorLoading>
   }
 ]);

@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    hydrateFallbackElement:<ErrorLoading></ErrorLoading>,
+    
     children: [
       {
         path: "/",
@@ -86,7 +86,7 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: "/*",
+    path: "/error",
     element:<ErrorLoading></ErrorLoading>
   }
 ]);
