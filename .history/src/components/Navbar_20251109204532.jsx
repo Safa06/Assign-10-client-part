@@ -4,13 +4,11 @@ import { MdHealthAndSafety } from "react-icons/md";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaGear, FaUser } from "react-icons/fa6";
+import { LuRotate3D } from "react-icons/lu";
 import { ImBoxAdd } from "react-icons/im";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/logo.jpg";
-import { MdGppGood } from "react-icons/md";
-import { SiGnuprivacyguard } from "react-icons/si";
-
 
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
@@ -49,12 +47,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to={"/all-models"}>
-                <MdHealthAndSafety /> Public Health
+                <IoLogoModelS /> Public Health
               </NavLink>
             </li>
           </ul>
-        </div>
-
+              </div>
+              
         <div className="flex justify-center items-center gap-4">
           <Link to={"/"}>
             <img src={logo} className="hidden lg:block w-15 h-15" alt="" />
@@ -67,7 +65,7 @@ const Navbar = () => {
 
       <div className="navbar-end">
         <div className=" hidden md:flex">
-          <ul className="menu menu-horizontal px-1 gap-6 text-pink-800 font-bold text-md">
+          <ul className="menu menu-horizontal px-1 gap-8 text-pink-800 font-bold text-md">
             <li>
               <NavLink to={"/"}>
                 <GoHomeFill />
@@ -76,8 +74,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to={"/all-models"}>
-                <MdGppGood />
-                Add Habit
+                <IoLogoModelS /> Add Habit
               </NavLink>
             </li>
             <li>
@@ -87,7 +84,6 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to={"/add-model"}>
-                <MdHealthAndSafety />
                 Public Health
               </NavLink>
             </li>
@@ -146,13 +142,12 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-3">
             <Link to={"/auth/login"} className="btn bg-pink-800 text-white">
               {" "}
               <IoLogIn /> Login
             </Link>
             <Link to={"/auth/register"} className="btn bg-pink-800 text-white">
-              <SiGnuprivacyguard />
               Sign Up
             </Link>
           </div>

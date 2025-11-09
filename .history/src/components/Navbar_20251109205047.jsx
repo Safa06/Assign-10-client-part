@@ -67,7 +67,7 @@ const Navbar = () => {
 
       <div className="navbar-end">
         <div className=" hidden md:flex">
-          <ul className="menu menu-horizontal px-1 gap-6 text-pink-800 font-bold text-md">
+          <ul className="menu menu-horizontal px-1 gap-8 text-pink-800 font-bold text-md">
             <li>
               <NavLink to={"/"}>
                 <GoHomeFill />

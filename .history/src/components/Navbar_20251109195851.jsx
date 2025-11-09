@@ -1,24 +1,79 @@
+// import React from "react";
+// import { Link, useNavigate } from "react-router";
+// import { AuthContext } from "../Context/AuthContext";
+// import { use } from "react";
+// import logo from "../assets/logo.jpg";
+
+// const Navbar = () => {
+//   const { user, logout } = use(AuthContext);
+//   const navigate = useNavigate();
+
+//   const handleLogout = async () => {
+//     await logout();
+//     navigate("/");
+//   };
+
+//   return (
+//     <nav className="bg-base-100 text-pink-800 font-bold p-4 flex justify-between items-center ">
+//       <div className="flex justify-center items-center gap-4">
+//               <img className="w-20 h-20 rounded-3xl" src={logo} alt="" />
+//               <p className="text-pink-800 font-bold text-2xl">Fit~Track</p>
+//       </div>
+
+//       <div className="flex items-center gap-4">
+//         <Link to="/" className="">
+//           Home
+//         </Link>
+//         <Link to="/game/:id">Add Habits</Link>
+//         <Link to="/game/:id">My Habits</Link>
+//         {!user && (
+//           <>
+//             <Link to="/login" className="btn bg-pink-800 text-white">
+//               Login
+//             </Link>
+//             <Link to="/register" className="btn bg-pink-800 text-white">
+//               Register
+//             </Link>
+//           </>
+//         )}
+//         {user && (
+//           <div className="flex items-center gap-2">
+//             <img
+//               src={user.photoURL || "https://via.placeholder.com/32"}
+//               alt="profile"
+//               className="w-8 h-8 rounded-full cursor-pointer"
+//               onClick={() => navigate("/profile")}
+//             />
+//             <button
+//               onClick={handleLogout}
+//               className="btn btn-secondary px-2 py-1 rounded hover:bg-red-700"
+//             >
+//               Logout
+//             </button>
+//           </div>
+//         )}
+//       </div>
+//     </nav>
+//   );
+// };
+// export default Navbar;
+
 import { Link, NavLink } from "react-router";
 import { IoLogoModelS } from "react-icons/io";
-import { MdHealthAndSafety } from "react-icons/md";
 import { GoHomeFill } from "react-icons/go";
 import { IoLogIn, IoLogOut } from "react-icons/io5";
 import { FaGear, FaUser } from "react-icons/fa6";
+import { LuRotate3D } from "react-icons/lu";
 import { ImBoxAdd } from "react-icons/im";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/logo.jpg";
-import { MdGppGood } from "react-icons/md";
-import { SiGnuprivacyguard } from "react-icons/si";
-
 
 const Navbar = () => {
-    const { user, signOutUser } = use(AuthContext);
-    
-
+  const { user, signOutUser } = use(AuthContext);
   return (
     <div className="navbar bg-base-100">
-      <div className="navbar-start p-2">
+      <div className="navbar-start p-3">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
             <svg
@@ -39,7 +94,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-pink-800 text-white z-1 mt-3 w-52 p-1 shadow"
+            className="menu menu-sm dropdown-content bg-pink-800 text-white z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
               <NavLink to={"/"}>
@@ -49,25 +104,27 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to={"/all-models"}>
-                <MdHealthAndSafety /> Public Health
+                <IoLogoModelS /> All Models
               </NavLink>
             </li>
           </ul>
-        </div>
-
-        <div className="flex justify-center items-center gap-4">
-          <Link to={"/"}>
-            <img src={logo} className="hidden lg:block w-15 h-15" alt="" />
-          </Link>
-          <Link to={"/"} className="text-xl font-bold text-pink-800">
-            Fit~Track
-          </Link>
+          <div className="flex justify-center items-center gap-4">
+            <Link to={"/"}>
+              <img src={logo} className="w- h-20" alt="" />
+            </Link>
+            <Link
+              to={"/"}
+              className="text-xl font-bold text-pink-800 hidden lg:block"
+            >
+              Fit~Track
+            </Link>
+          </div>
         </div>
       </div>
 
       <div className="navbar-end">
         <div className=" hidden md:flex">
-          <ul className="menu menu-horizontal px-1 gap-6 text-pink-800 font-bold text-md">
+          <ul className="menu menu-horizontal px-1 gap-10 text-pink-800 font-bold text-md">
             <li>
               <NavLink to={"/"}>
                 <GoHomeFill />
@@ -76,19 +133,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink to={"/all-models"}>
-                <MdGppGood />
-                Add Habit
+                <IoLogoModelS /> All Models
               </NavLink>
             </li>
             <li>
               <NavLink to={"/add-model"}>
-                <ImBoxAdd /> My Habit
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"/add-model"}>
-                <MdHealthAndSafety />
-                Public Health
+                <ImBoxAdd /> Add model
               </NavLink>
             </li>
             {/* 
@@ -146,13 +196,12 @@ const Navbar = () => {
             </ul>
           </div>
         ) : (
-          <div className="flex justify-center items-center gap-2">
+          <div className="flex justify-center items-center gap-3">
             <Link to={"/auth/login"} className="btn bg-pink-800 text-white">
               {" "}
               <IoLogIn /> Login
             </Link>
             <Link to={"/auth/register"} className="btn bg-pink-800 text-white">
-              <SiGnuprivacyguard />
               Sign Up
             </Link>
           </div>

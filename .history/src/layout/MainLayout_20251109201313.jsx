@@ -7,7 +7,7 @@ const MainLayout = () => {
   return (
     <div>
       <div className="w-full mx-auto">
-        <div className="shadow-md px-4">
+        <div className="shadow-md">
           <Navbar />
         </div>
 
