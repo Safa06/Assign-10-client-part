@@ -1,15 +1,13 @@
 import { Link } from "react-router";
 import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
 import logo from "../assets/logo.jpg"
-import { FaPhoneSquareAlt } from "react-icons/fa";
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-linear-to-r from-pink-900 via-pink-700 to-pink-500 py-8 px-4  rounded-t-2xl mt-20">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center space-x-2 text-white">
             <img src={logo} className="rounded-3xl w-12 h-12" alt="" />
@@ -25,14 +23,20 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a className="text-gray-600 dark:text-gray-200 flex items-center hover:text-yellow-300 mr-3">
-                <FaPhoneSquareAlt size={18} className="mr-2" /> +8801711111100
-              </a>
+              Phone: +
+            </li>
+            <li>
+              <Link
+                to="/auth/register"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
+              >
+                Sign Up
+              </Link>
             </li>
             <li>
               <a
                 href="mailto:support@nihonlearn.com"
-                className="flex items-center text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="flex items-center text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
                 <Mail size={18} className="mr-2" /> support@nihonlearn.com
               </a>
@@ -48,7 +52,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300 mr-3"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600 mr-3"
               >
                 Privacy Policy
               </Link>
@@ -56,7 +60,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
                 Terms of Service
               </Link>
@@ -73,7 +77,7 @@ const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-700"
             >
               <Facebook size={24} />
             </a>
@@ -81,7 +85,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-400"
             >
               <Twitter size={24} />
             </a>
@@ -89,7 +93,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-pink-600"
             >
               <Instagram size={24} />
             </a>
@@ -97,7 +101,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t lg:mb-0 md:mb-0 mb-20 border-white mt-8 pt-4 text-center">
+      <div className="border-t lg:mb-0 md:mb-0 mb-20 border-[#fa7171] mt-8 pt-4 text-center">
         <p className="text-sm text-gray-600 dark:text-gray-200">
           © {currentYear} Fit ~ Track. All Rights Reserved.
         </p>

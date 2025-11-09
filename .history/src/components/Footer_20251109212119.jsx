@@ -25,14 +25,14 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a className="text-gray-600 dark:text-gray-200 flex items-center hover:text-yellow-300 mr-3">
+              <a className="text-gray-600 dark:text-gray-200 flex items-center hover:text--600 mr-3">
                 <FaPhoneSquareAlt size={18} className="mr-2" /> +8801711111100
               </a>
             </li>
             <li>
               <a
                 href="mailto:support@nihonlearn.com"
-                className="flex items-center text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="flex items-center text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
                 <Mail size={18} className="mr-2" /> support@nihonlearn.com
               </a>
@@ -48,7 +48,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300 mr-3"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600 mr-3"
               >
                 Privacy Policy
               </Link>
@@ -56,7 +56,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
                 Terms of Service
               </Link>
@@ -73,7 +73,7 @@ const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-700"
             >
               <Facebook size={24} />
             </a>
@@ -81,7 +81,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-400"
             >
               <Twitter size={24} />
             </a>
@@ -89,7 +89,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-pink-600"
             >
               <Instagram size={24} />
             </a>

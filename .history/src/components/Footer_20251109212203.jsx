@@ -56,7 +56,7 @@ const Footer = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
                 Terms of Service
               </Link>
@@ -73,7 +73,7 @@ const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-700"
             >
               <Facebook size={24} />
             </a>
@@ -81,7 +81,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-400"
             >
               <Twitter size={24} />
             </a>
@@ -89,7 +89,7 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-pink-600"
             >
               <Instagram size={24} />
             </a>

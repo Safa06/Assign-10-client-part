@@ -1,15 +1,13 @@
 import { Link } from "react-router";
 import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
 import logo from "../assets/logo.jpg"
-import { FaPhoneSquareAlt } from "react-icons/fa";
-
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-linear-to-r from-pink-900 via-pink-700 to-pink-500 py-8 px-4  rounded-t-2xl mt-20">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
         <div>
           <div className="flex items-center space-x-2 text-white">
             <img src={logo} className="rounded-3xl w-12 h-12" alt="" />
@@ -25,40 +23,59 @@ const Footer = () => {
           </h3>
           <ul className="space-y-2">
             <li>
-              <a className="text-gray-600 dark:text-gray-200 flex items-center hover:text-yellow-300 mr-3">
-                <FaPhoneSquareAlt size={18} className="mr-2" /> +8801711111100
-              </a>
+              <Link
+                to="/auth/login"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
+              >
+               Login
+              </Link>
             </li>
             <li>
-              <a
-                href="mailto:support@nihonlearn.com"
-                className="flex items-center text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              <Link
+                to="/auth/register"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
-                <Mail size={18} className="mr-2" /> support@nihonlearn.com
-              </a>
+                Sign Up
+              </Link>
             </li>
           </ul>
         </div>
 
         <div>
           <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
-            Terms & Conditions
+            Community
           </h3>
           <ul className="space-y-2">
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300 mr-3"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
-                Privacy Policy
+                Discussion Forums
               </Link>
             </li>
             <li>
               <Link
                 to="/"
-                className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
               >
-                Terms of Service
+                Study Groups
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
+              >
+                Events & Workshops
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="text-gray-600 dark:text-gray-200 hover:text-blue-600"
+              >
+                Leaderboard
               </Link>
             </li>
           </ul>
@@ -66,14 +83,14 @@ const Footer = () => {
 
         <div>
           <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-gray-200">
-            Social Media Links
+            Connect With Us
           </h3>
           <div className="flex space-x-4 mb-4">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-700"
             >
               <Facebook size={24} />
             </a>
@@ -81,7 +98,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-blue-400"
             >
               <Twitter size={24} />
             </a>
@@ -89,17 +106,33 @@ const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-200 hover:text-yellow-300"
+              className="text-gray-600 dark:text-gray-200 hover:text-pink-600"
             >
               <Instagram size={24} />
+            </a>
+          </div>
+          <div>
+            <a
+              href="mailto:support@nihonlearn.com"
+              className="flex items-center text-gray-600 dark:text-gray-200 hover:text-blue-600"
+            >
+              <Mail size={18} className="mr-2" /> support@nihonlearn.com
             </a>
           </div>
         </div>
       </div>
 
-      <div className="border-t lg:mb-0 md:mb-0 mb-20 border-white mt-8 pt-4 text-center">
+      <div className="border-t lg:mb-0 md:mb-0 mb-20 border-[#fa7171] mt-8 pt-4 text-center">
         <p className="text-sm text-gray-600 dark:text-gray-200">
-          © {currentYear} Fit ~ Track. All Rights Reserved.
+          © {currentYear} 3D Model Hub Learn. All Rights Reserved.
+          <span className="ml-4">
+            <Link to="/" className="hover:text-blue-600 mr-3">
+              Privacy Policy
+            </Link>
+            <Link to="/" className="hover:text-blue-600">
+              Terms of Service
+            </Link>
+          </span>
         </p>
       </div>
     </footer>
