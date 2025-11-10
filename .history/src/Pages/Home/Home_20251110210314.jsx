@@ -164,13 +164,11 @@ const Home = () => {
               "Set reminders to keep yourself on track.",
               "Celebrate small wins every week.",
               "Avoid all-or-nothing thinking.",
-              "Track progress visually for motivation.",
-              "Share your habits with a friend for accountability.",
             ].map((tip, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="p-4 border-2 border-pink-800 rounded-xl shadow-sm bg-white"
+                className="p-4 border rounded-xl shadow-sm bg-white"
               >
                 <p className="text-gray-700">{tip}</p>
               </motion.div>

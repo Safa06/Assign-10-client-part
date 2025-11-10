@@ -164,8 +164,6 @@ const Home = () => {
               "Set reminders to keep yourself on track.",
               "Celebrate small wins every week.",
               "Avoid all-or-nothing thinking.",
-              "Track progress visually for motivation.",
-              "Share your habits with a friend for accountability.",
             ].map((tip, i) => (
               <motion.div
                 key={i}

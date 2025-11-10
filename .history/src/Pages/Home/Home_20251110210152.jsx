@@ -114,6 +114,7 @@ const Home = () => {
         >
           <TypeAnimation
             sequence={[
+              // Same substring at the start will only be typed once, initially
               "Daily Motivation",
               1000,
               "Daily Motivation Quotes!!",
@@ -170,7 +171,7 @@ const Home = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="p-4 border-2 border-pink-800 rounded-xl shadow-sm bg-white"
+                className="p-4 border rounded-xl shadow-sm bg-white"
               >
                 <p className="text-gray-700">{tip}</p>
               </motion.div>

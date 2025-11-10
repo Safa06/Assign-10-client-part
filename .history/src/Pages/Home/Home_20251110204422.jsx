@@ -6,25 +6,12 @@ import focus from "../../assets/focus.png"
 import stress from "../../assets/stress.png"
 import steps from "../../assets/steps.png"
 import peace from "../../assets/peace.png"
-import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
+import Fra
 
 
 const Home = () => {
   const data = useLoaderData();
   console.log(data);
-
-
-  // for marquee texts
-  const motivationQuotes = [
-    "Small habits, when repeated daily, lead to big success.",
-    "Discipline beats motivation every single time.",
-    "Focus on progress, not perfection.",
-    "Your habits decide your future, not your goals.",
-    "Start today — your future self will thank you.",
-  ];
-
-
   return (
     <div>
       <Banner />
@@ -104,61 +91,31 @@ const Home = () => {
         </div>
       </div>
 
-      {/* extra section 1: daily motivation */}
+      {/* extra section 2 */}
       <div>
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mt-10 p-8 rounded-lg text-pink-800 font-bold "
+          className="text-center my-10 bg-gray-100 p-8 rounded-lg"
         >
-          <TypeAnimation
-            sequence={[
-              "Daily Motivation",
-              1000,
-              "Daily Motivation Quotes!!",
-              1000,
-            ]}
-            speed={50}
-            style={{ fontSize: "2em" }}
-            repeat={Infinity}
-          />
-
-          <Marquee
-            className="mt-8 rounded-xl bg-pink-200 h-18"
-            gradient={false}
-            speed={50}
-          >
-            {motivationQuotes.map((quote, i) => (
-              <span
-                key={i}
-                className="text-lg text-gray-700 px-4 py-4 italic mx-10 whitespace-nowrap"
-              >
-                “{quote}”
-              </span>
-            ))}
-          </Marquee>
+          <h2 className="text-2xl font-semibold mb-4">Daily Motivation</h2>
+          <p className="text-gray-700 italic">
+            "Small habits, when repeated daily, lead to big success."
+          </p>
         </motion.section>
 
-        {/* extra Section 2: Habit Tracking Tips */}
+        {/* 🆕 Extra Section 2: Habit Tracking Tips */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mt-10 p-8 rounded-lg text-pink-800 font-bold"
+          className="my-10"
         >
-          <TypeAnimation
-            sequence={[
-              "Tips for",
-              1000,
-              "Tips for Building Strong Habits!!",
-              1000
-            ]}
-            speed={50}
-            style={{ fontSize: "2em" }}
-            repeat={Infinity}
-          />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <h2 className="text-2xl font-semibold text-center mb-6">
+            Tips for Building Strong Habits
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               "Start small and stay consistent.",
               "Set reminders to keep yourself on track.",
@@ -170,7 +127,7 @@ const Home = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="p-4 border-2 border-pink-800 rounded-xl shadow-sm bg-white"
+                className="p-4 border rounded-xl shadow-sm bg-white"
               >
                 <p className="text-gray-700">{tip}</p>
               </motion.div>
