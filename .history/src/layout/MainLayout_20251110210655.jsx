@@ -11,13 +11,12 @@ const MainLayout = () => {
           <Navbar />
         </div>
 
-        
         <div className="mt-4 px-12">
           <Outlet />
         </div>
 
 
-
+        
         <Footer />
       </div>
 

@@ -1,7 +1,7 @@
 import { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import { FcGoogle } from "react-icons/fc";
+import { FaGoogle } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
 const Login = () => {
@@ -74,7 +74,7 @@ const Login = () => {
             <div>
               <a className="link link-hover  text-pink-800">Forgot password?</a>
             </div>
-            <button className="btn text-white mt-4 rounded-2xl bg-pink-800">
+            <button className="btn text-white mt-4 rounded-full bg-linear-to-r from-pink-500 to-red-600">
               Login
             </button>
           </fieldset>
@@ -82,15 +82,15 @@ const Login = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white rounded-2xl text-black border-2 border-green-600"
+          className="btn bg-white rounded-full text-black border-[#e5e5e5]"
         >
-          <FcGoogle />
+          <FaGoogle />
           Login with Google
         </button>
         <p className="text-center">
-          Newbie? Please {" "}
+          New to our website? Please{" "}
           <Link
-            className="text-blue-500 hover:text-red-600"
+            className="text-blue-500 hover:text-blue-800"
             to="/auth/register"
           >
             Register

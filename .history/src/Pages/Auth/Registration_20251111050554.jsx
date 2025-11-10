@@ -45,7 +45,7 @@ const Register = () => {
   };
 
   return (
-    <div className="card bg-pink-100 mx-auto max-w-sm w-full shrink-0 shadow-2xl border-2 border-pink-800">
+    <div className="card bg-pink-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl border-2 border-pink-800">
       <div className="card-body">
         <h1 className="text-pink-800 font-bold text-center">
           <TypeAnimation
@@ -55,7 +55,7 @@ const Register = () => {
             repeat={Infinity}
           />
         </h1>
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleRegister} className="w-full">
           <fieldset className="fieldset mt-6">
             {/* email field */}
             <label className="label text-lg text-gray-600 font-semibold">

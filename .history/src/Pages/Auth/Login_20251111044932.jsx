@@ -1,7 +1,7 @@
 import { use } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../context/AuthContext";
-import { FcGoogle } from "react-icons/fc";
+import { FaGoogle } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
 
 const Login = () => {
@@ -44,7 +44,9 @@ const Login = () => {
       <div className="card-body">
         <h1 className="font-bold text-center text-pink-800">
           <TypeAnimation
-            sequence={["Login", 1000, "Login to explore more !!", 1000]}
+            sequence={["Login",
+              1000,
+              "Login to explore more !!", 1000]}
             speed={50}
             style={{ fontSize: "2em" }}
             repeat={Infinity}
@@ -52,29 +54,25 @@ const Login = () => {
         </h1>
         <form onSubmit={handleLogIn}>
           <fieldset className="fieldset mt-6">
-            <label className="label text-gray-600 font-semibold text-lg">
-              Email
-            </label>
+            <label className="label text-gray-600 font-semibold text-lg">Email</label>
             <input
               type="email"
               name="email"
-              className="input rounded-2xl focus:border-2 border-pink-600 focus:outline-gray-200"
+              className="input rounded- focus:border-0 focus:outline-gray-200"
               placeholder="Email"
             />
 
-            <label className="label text-gray-600 font-semibold text-lg mt-5">
-              Password
-            </label>
+            <label className="label">Password</label>
             <input
               type="password"
               name="password"
-              className="input rounded-2xl focus:border-2 border-pink-600 focus:outline-gray-200 mb-5"
+              className="input rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Password"
             />
             <div>
-              <a className="link link-hover  text-pink-800">Forgot password?</a>
+              <a className="link link-hover">Forgot password?</a>
             </div>
-            <button className="btn text-white mt-4 rounded-2xl bg-pink-800">
+            <button className="btn text-white mt-4 rounded-full bg-linear-to-r from-pink-500 to-red-600">
               Login
             </button>
           </fieldset>
@@ -82,15 +80,15 @@ const Login = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white rounded-2xl text-black border-2 border-green-600"
+          className="btn bg-white rounded-full text-black border-[#e5e5e5]"
         >
-          <FcGoogle />
+          <FaGoogle />
           Login with Google
         </button>
         <p className="text-center">
-          Newbie? Please {" "}
+          New to our website? Please{" "}
           <Link
-            className="text-blue-500 hover:text-red-600"
+            className="text-blue-500 hover:text-blue-800"
             to="/auth/register"
           >
             Register

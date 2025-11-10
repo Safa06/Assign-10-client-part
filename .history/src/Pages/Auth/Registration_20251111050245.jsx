@@ -45,7 +45,7 @@ const Register = () => {
   };
 
   return (
-    <div className="card bg-pink-100 mx-auto max-w-sm w-full shrink-0 shadow-2xl border-2 border-pink-800">
+    <div className="card bg-pink-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl border-2 border-pink-800">
       <div className="card-body">
         <h1 className="text-pink-800 font-bold text-center">
           <TypeAnimation
@@ -56,7 +56,7 @@ const Register = () => {
           />
         </h1>
         <form onSubmit={handleRegister}>
-          <fieldset className="fieldset mt-6">
+          <fieldset className="fieldset">
             {/* email field */}
             <label className="label text-lg text-gray-600 font-semibold">
               Name
@@ -68,9 +68,7 @@ const Register = () => {
               placeholder="Name"
             />
 
-            <label className="label text-lg text-gray-600 font-semibold">
-              PhotoURL
-            </label>
+            <label className="label">PhotoURL</label>
             <input
               type="text"
               name="photoURL"
@@ -78,29 +76,25 @@ const Register = () => {
               placeholder="Photo URL"
             />
             {/* email field */}
-            <label className="label text-lg text-gray-600 font-semibold">
-              Email
-            </label>
+            <label className="label">Email</label>
             <input
               type="email"
               name="email"
-              className="input rounded-2xl focus:border-2 border-pink-800 focus:outline-gray-200 mb-5"
+              className="input rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Email"
             />
             {/* password field */}
-            <label className="label text-lg text-gray-600 font-semibold">
-              Password
-            </label>
+            <label className="label">Password</label>
             <input
               type="password"
               name="password"
-              className="input rounded-2xl focus:border-2 border-pink-800 focus:outline-gray-200 mb-5"
+              className="input rounded-full focus:border-0 focus:outline-gray-200"
               placeholder="Password"
             />
             <div>
-              <a className="link link-hover text-pink-800">Forgot password?</a>
+              <a className="link link-hover">Forgot password?</a>
             </div>
-            <button className="btn text-white mt-4 rounded-2xl bg-pink-800">
+            <button className="btn text-white mt-4 rounded-full bg-linear-to-r from-pink-500 to-red-600">
               Register
             </button>
           </fieldset>
@@ -108,7 +102,7 @@ const Register = () => {
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn bg-white rounded-2xl text-black border-2 border-green-600"
+          className="btn bg-white rounded-full text-black border-[#e5e5e5]"
         >
           <FcGoogle />
           Login with Google
