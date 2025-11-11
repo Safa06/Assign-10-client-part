@@ -47,7 +47,7 @@ const Home = () => {
 
       
       {/* 6 newest cards load */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-11/12 mx-auto mt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 w-11/12 mx-auto mt-10 mb">
         {data.map((model) => (
           <ModelCard key={model._id} model={model} />
         ))}
@@ -56,7 +56,7 @@ const Home = () => {
       
 
       {/* why habits section */}
-      <div className="text-center font-bold mt-20 text-pink-800">
+      <div className="text-center font-bold mt-10 text-pink-800">
         <TypeAnimation
           sequence={[
             // Same substring at the start will only be typed once, initially
@@ -161,7 +161,7 @@ const Home = () => {
             style={{ fontSize: "2em" }}
             repeat={Infinity}
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {[
               "Start small and stay consistent.",
               "Set reminders to keep yourself on track.",

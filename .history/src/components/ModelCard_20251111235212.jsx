@@ -32,6 +32,7 @@ export const ModelCard = ({ model }) => {
             </Link>
           </div>
         </div>
+  
     </div>
   );
 };

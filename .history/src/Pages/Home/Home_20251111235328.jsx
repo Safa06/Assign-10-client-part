@@ -161,7 +161,7 @@ const Home = () => {
             style={{ fontSize: "2em" }}
             repeat={Infinity}
           />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
             {[
               "Start small and stay consistent.",
               "Set reminders to keep yourself on track.",

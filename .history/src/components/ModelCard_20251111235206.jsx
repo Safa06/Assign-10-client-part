@@ -6,7 +6,7 @@ export const ModelCard = ({ model }) => {
 
   return (
     <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-    
+      <div>
         <figure className="h-48 overflow-hidden">
           <img
             src={image}
@@ -32,6 +32,7 @@ export const ModelCard = ({ model }) => {
             </Link>
           </div>
         </div>
+      </div>
     </div>
   );
 };

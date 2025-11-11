@@ -9,7 +9,7 @@ const AllHabits = () => {
     <div>
       <div className="text-3xl text-center font-bold mb-10 mt-5 text-pink-800"> All Public Habits</div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-12 my-5 w-11/12 mx-auto">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 my-5 w-11/12">
         {data.map((model) => (
           <ModelCard key={model._id} model={model} />
         ))}

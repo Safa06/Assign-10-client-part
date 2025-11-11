@@ -39,6 +39,13 @@ export const router = createBrowserRouter([
         ),
       },
       // {
+      //   path: "/public-habits",
+      //   element: (
+      //     <AllHabits></AllHabits>
+      //   ),
+      //   loader:()=>fetch("https://localhost:3000/all_habits"),
+      // },
+      // {
       //   path: "/profile/update",
       //   element: (
       //     <PrivateRoute>
