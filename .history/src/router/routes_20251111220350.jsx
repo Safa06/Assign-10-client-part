@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/6_habits"),
+        loader: () => fetch("http://localhost:3000/_habits"),
       },
       {
         path: "/all-habits",

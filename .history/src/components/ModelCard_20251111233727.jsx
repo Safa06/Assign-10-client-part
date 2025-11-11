@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 export const ModelCard = ({ model }) => {
-  const { title, image, likes, description, _id ,createdAt,creatorName} = model;
+  const { title, image, likes, description, _id ,crea} = model;
 
 
   return (
@@ -19,9 +19,7 @@ export const ModelCard = ({ model }) => {
           Liked By : {likes}
         </div>
         <p className="">{description}</p>
-        <p className="text-sm text-gray-500">Created By :  {creatorName}</p>
-        <p className="text-sm text-gray-500">Created At :  {createdAt}</p>
-
+        {/* <p className="text-sm text-base-content/70">by {author}</p> */}
         <div className="card-actions justify-center items-center mt-4 gap-6">
           
           <Link

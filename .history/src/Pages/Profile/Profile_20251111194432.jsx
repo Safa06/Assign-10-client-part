@@ -1,12 +1,12 @@
 import React from "react";
 import { AuthContext } from "../../context/AuthContext"
-//import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { use } from "react";
 //import { div } from "framer-motion/client";
 
 const MyProfile = () => {
   const { user } = use(AuthContext);
-  //const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="w-1/2 mx-auto mt-10 flex justify-center items-center bg-pink-100 border-2 border-pink-800 rounded-2xl">
@@ -21,12 +21,12 @@ const MyProfile = () => {
           {user.displayName}
         </h2>
         <p className="mb-2 text-black">{user.email}</p>
-        {/* <button
+        <button
           className="bg-pink-800 text-white font-bold mt-10 px-4 py-3 rounded-2xl cursor-pointer"
           onClick={() => navigate("/profile/update")}
         >
           Update Profile
-        </button> */}
+        </button>
       </div>
     </div>
   );

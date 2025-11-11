@@ -20,7 +20,6 @@ export const ModelCard = ({ model }) => {
         </div>
         <p className="">{description}</p>
         <p className="text-sm text-gray-500">Created By :  {creatorName}</p>
-        <p className="text-sm text-gray-500">Created At :  {createdAt}</p>
 
         <div className="card-actions justify-center items-center mt-4 gap-6">
           

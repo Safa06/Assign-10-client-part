@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home/Home";
+import AllModels from "../Pages/AllModels/AllModels";
 import AddHabit from "../Pages/AddHabit/AddHabit"
 import MyHabit from "../Pages/MyHabit/MyHabit"
 import Profile from "../Pages/Profile/Profile";
@@ -8,8 +9,7 @@ import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Registration";
 import PrivateRoute from "./PrivateRoute";
 import ErrorLoading from "../components/ErrorLoading"
-import AllHabits from "../Pages/AllHabits/AllHabits";
-//import UpdateProfile from "../Pages/Profile/UpdateProfile";
+// import UpdateProfile from "../Pages/Profile/UpdateProfile";
 
 //import ModelDetails from "../Pages/ModelDetails/ModelDetails";
 //import UpdateModel from "../Pages/UpdateModel/UpdateModel";
@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/6_habits"),
+        loader: () => fetch("http://localhost:3000/latest-models"),
       },
       {
-        path: "/all-habits",
-        element: <AllHabits />,
-        loader: () => fetch("http://localhost:3000/all_habits"),
+        path: "/all-models",
+        element: <AllModels />,
+        loader: () => fetch("http://localhost:3000/models"),
       },
       {
         path: "/profile",
@@ -39,20 +39,13 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/public-habits",
+        path: "/profile/update",
         element: (
-          <AllHabits></AllHabits>
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
         ),
-        loader:()=>fetch("https://localhost:3000/all_habits"),
       },
-      // {
-      //   path: "/profile/update",
-      //   element: (
-      //     <PrivateRoute>
-      //       <UpdateProfile />
-      //     </PrivateRoute>
-      //   ),
-      // },
       {
         path: "/add-habit",
         element: (

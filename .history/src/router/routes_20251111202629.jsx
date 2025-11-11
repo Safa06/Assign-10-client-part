@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home/Home";
+import AllModels from "../Pages/AllHabits/AllHabits";
 import AddHabit from "../Pages/AddHabit/AddHabit"
 import MyHabit from "../Pages/MyHabit/MyHabit"
 import Profile from "../Pages/Profile/Profile";
@@ -23,12 +24,12 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/6_habits"),
+        loader: () => fetch("http://localhost:3000/latest-models"),
       },
       {
-        path: "/all-habits",
+        path: "/all-models",
         element: <AllHabits />,
-        loader: () => fetch("http://localhost:3000/all_habits"),
+        loader: () => fetch("http://localhost:3000/models"),
       },
       {
         path: "/profile",
@@ -37,13 +38,6 @@ export const router = createBrowserRouter([
             <Profile />
           </PrivateRoute>
         ),
-      },
-      {
-        path: "/public-habits",
-        element: (
-          <AllHabits></AllHabits>
-        ),
-        loader:()=>fetch("https://localhost:3000/all_habits"),
       },
       // {
       //   path: "/profile/update",

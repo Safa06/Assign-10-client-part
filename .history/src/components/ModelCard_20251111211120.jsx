@@ -1,9 +1,7 @@
 import { Link } from "react-router";
 
 export const ModelCard = ({ model }) => {
-  const { title, image, likes, description, _id ,createdAt,creatorName} = model;
-
-
+  const { title, image, likes, description, _id } = model;
   return (
     <div className="card bg-base-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
       <figure className="h-48 overflow-hidden">
@@ -19,10 +17,8 @@ export const ModelCard = ({ model }) => {
           Liked By : {likes}
         </div>
         <p className="">{description}</p>
-        <p className="text-sm text-gray-500">Created By :  {creatorName}</p>
-        <p className="text-sm text-gray-500">Created At :  {createdAt}</p>
-
-        <div className="card-actions justify-center items-center mt-4 gap-6">
+        {/* <p className="text-sm text-base-content/70">by {author}</p> */}
+        <div className="card-actions justify-center items-center mt-4">
           
           <Link
             to={`/model-details/${_id}`}

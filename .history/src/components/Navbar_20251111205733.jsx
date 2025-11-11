@@ -86,7 +86,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/all-habits"}>
+              <NavLink to={"/public-habits"}>
                 <MdHealthAndSafety />
                 Public Health
               </NavLink>
