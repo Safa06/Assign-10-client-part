@@ -9,9 +9,10 @@ import Register from "../Pages/Auth/Registration";
 import PrivateRoute from "./PrivateRoute";
 import ErrorLoading from "../components/ErrorLoading"
 import AllHabits from "../Pages/AllHabits/AllHabits";
-import HabitDetails from "../Pages/HabitDetails/HabitDetails"
 import UpdateHabit from "../Pages/UpdateHabit/UpdateHabit";
 
+//import ModelDetails from "../Pages/ModelDetails/ModelDetails";
+//import UpdateModel from "../Pages/UpdateModel/UpdateModel";
 
 export const router = createBrowserRouter([
   {
@@ -57,9 +58,10 @@ export const router = createBrowserRouter([
         path: "/habit-details/:id",
         element: (
           <PrivateRoute>
-            <HabitDetails />
+            <ModelDetails />
           </PrivateRoute>
         ),
+        
       },
 
       {
@@ -70,7 +72,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/all_habits/${params.id}`),
+          fetch(`http://localhost:3000/models/${params.id}`),
       },
       {
         path: "/auth/login",

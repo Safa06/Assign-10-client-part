@@ -1,11 +1,7 @@
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { ModelCard } from "../../components/ModelCard";
-import Loading from "../Loading/Loading";
-
-
-
-const MyHabit = () => {
+const MyModels = () => {
   const { user } = use(AuthContext);
   const [models, setModels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +20,7 @@ const MyHabit = () => {
   }, [user]);
 
   if (loading) {
-    return <Loading></Loading>
+    return <div> Please wait ... Loading...</div>;
   }
 
   return (
@@ -38,4 +34,4 @@ const MyHabit = () => {
   );
 };
 
-export default MyHabit;
+export default MyModels;

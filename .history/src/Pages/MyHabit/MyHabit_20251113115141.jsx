@@ -5,7 +5,7 @@ import Loading from "../Loading/Loading";
 
 
 
-const MyHabit = () => {
+const MyModels = () => {
   const { user } = use(AuthContext);
   const [models, setModels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -38,4 +38,4 @@ const MyHabit = () => {
   );
 };
 
-export default MyHabit;
+export default MyModels;

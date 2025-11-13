@@ -5,8 +5,7 @@ import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";
 import { AuthContext } from "../../context/AuthContext";
 
-const UpdateHabit = () => {
-    const data = useLoaderData();
+const UpdateeLoaderData();
     const { user } = use(AuthContext);
   //console.log(data)
   const model = data.result;
@@ -139,4 +138,4 @@ const UpdateHabit = () => {
   );
 };
 
-export default UpdateHabit;
+export default UpdateModel;

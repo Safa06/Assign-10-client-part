@@ -9,9 +9,9 @@ import Register from "../Pages/Auth/Registration";
 import PrivateRoute from "./PrivateRoute";
 import ErrorLoading from "../components/ErrorLoading"
 import AllHabits from "../Pages/AllHabits/AllHabits";
-import HabitDetails from "../Pages/HabitDetails/HabitDetails"
 import UpdateHabit from "../Pages/UpdateHabit/UpdateHabit";
-
+import HabitDetails from "../Pages/HabitDetails/HabitDetails"
+import UpdateHabit from "../Pages/UpdateModel/UpdateModel";
 
 export const router = createBrowserRouter([
   {
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
         path: "/habit-details/:id",
         element: (
           <PrivateRoute>
-            <HabitDetails />
+            <ModelDetails />
           </PrivateRoute>
         ),
       },

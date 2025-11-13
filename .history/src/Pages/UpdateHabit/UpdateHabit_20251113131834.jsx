@@ -139,4 +139,4 @@ const UpdateHabit = () => {
   );
 };
 
-export default UpdateHabit;
+export default UpdateModel;

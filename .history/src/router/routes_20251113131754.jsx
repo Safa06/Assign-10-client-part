@@ -9,9 +9,9 @@ import Register from "../Pages/Auth/Registration";
 import PrivateRoute from "./PrivateRoute";
 import ErrorLoading from "../components/ErrorLoading"
 import AllHabits from "../Pages/AllHabits/AllHabits";
+import UpdateHabit from "../Pages/UpdateHabit/UpdateHabit";
 import HabitDetails from "../Pages/HabitDetails/HabitDetails"
 import UpdateHabit from "../Pages/UpdateHabit/UpdateHabit";
-
 
 export const router = createBrowserRouter([
   {

@@ -38,4 +38,4 @@ const MyHabit = () => {
   );
 };
 
-export default MyHabit;
+export default MyModels;
