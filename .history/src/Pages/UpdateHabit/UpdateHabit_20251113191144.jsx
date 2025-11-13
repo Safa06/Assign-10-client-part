@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { useLoaderData,useParams } from "react-router";
+import { useLoaderData } from "react-router";
 import { use } from "react";
 import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";
@@ -8,9 +8,8 @@ import { AuthContext } from "../../context/AuthContext";
 const UpdateHabit = () => {
     const data = useLoaderData();
     const { user } = use(AuthContext);
-  //console.log(data)
-  const model = data;
-  const { id } = useParams();
+  console.log(data)
+  const model = data.result;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +25,7 @@ const UpdateHabit = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`http://localhost:3000/all-habits/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +62,7 @@ const UpdateHabit = () => {
             </label>
             <input
               type="text"
-              defaultValue={model?.title|| ""}
+              defaultValue={model.title}
               name="title"
               required
               className="input w-full rounded-2xl  border-2 border-pink-800"
@@ -77,7 +76,7 @@ const UpdateHabit = () => {
               Habit Description
             </label>
             <textarea
-              defaultValue={model?.description|| ""}
+              defaultValue={model.description}
               name="description"
               required
               rows="3"
@@ -90,7 +89,7 @@ const UpdateHabit = () => {
           <div>
             <label className="label text-lg font-semibold mb-2">Category</label>
             <select
-              defaultValue={model?.category || ""}
+              defaultValue={model.category}
               name="category"
               required
               className="select w-full rounded-2xl  border-2 border-pink-800"
@@ -115,7 +114,7 @@ const UpdateHabit = () => {
             <input
               type="url"
               name="image"
-              defaultValue={model?.image || ""}
+              defaultValue={model.image}
               required
               className="input w-full rounded-2xl  border-2 border-pink-800"
               placeholder="https://example.com/image.jpg"
@@ -132,7 +131,7 @@ const UpdateHabit = () => {
             type="submit"
             className="btn w-full font-bold text-white mt-6 rounded-2xl bg-pink-800"
           >
-            Update Habit
+            Update model
           </button>
         </form>
       </div>

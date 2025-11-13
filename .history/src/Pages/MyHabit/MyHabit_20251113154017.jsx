@@ -11,7 +11,7 @@ const MyHabit = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-habit?email=${user.email}`, {
+    fetch(`https://localhost:3000/my-habit?email=${user.email}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },

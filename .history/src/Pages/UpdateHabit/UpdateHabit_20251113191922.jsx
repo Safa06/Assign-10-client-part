@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { useLoaderData,useParams } from "react-router";
+import { useLoaderData } from "react-router";
 import { use } from "react";
 import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";
@@ -8,9 +8,8 @@ import { AuthContext } from "../../context/AuthContext";
 const UpdateHabit = () => {
     const data = useLoaderData();
     const { user } = use(AuthContext);
-  //console.log(data)
-  const model = data;
-  const { id } = useParams();
+  console.log(data)
+  const model = data.result;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +25,7 @@ const UpdateHabit = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`http://localhost:3000/all_habits/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

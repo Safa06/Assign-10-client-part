@@ -157,7 +157,7 @@ const HabitDetails = () => {
               </button> */}
               <button
                 onClick={handleDelete}
-                className="btn rounded-2xl bg-purple-500 text-white"
+                className="btn btn-outline rounded-2xl bg-"
               >
                 Delete
               </button>

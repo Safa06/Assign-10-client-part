@@ -69,8 +69,9 @@ export const router = createBrowserRouter([
             <UpdateHabit />
           </PrivateRoute>
         ),
-        loader: ({ params }) =>
-          fetch(`http://localhost:3000/all_habits/${params.id}`)
+        loader: async ({ params }) =>
+          fetch(`http://localhost:3000/all_habits/${params.id}`);
+        const 
       },
       {
         path: "/auth/login",

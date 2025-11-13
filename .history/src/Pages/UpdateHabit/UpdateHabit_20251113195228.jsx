@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { useLoaderData,useParams } from "react-router";
+import { useLoaderData } from "react-router";
 import { use } from "react";
 import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";

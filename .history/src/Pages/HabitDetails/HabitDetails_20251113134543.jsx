@@ -14,7 +14,7 @@ const HabitDetails = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`https://localhost:3000/all_habits/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -39,7 +39,7 @@ const HabitDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/all_habits/${model._id}`, {
+        fetch(`https://localhost:3000/all_habits/${model._id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -144,8 +144,8 @@ const HabitDetails = () => {
 
             <div className="flex gap-3 mt-6">
               <Link
-                to={`/update-habit/${model._id}`}
-                className="btn cursor-pointer rounded-2xl bg-pink-800 text-white"
+                to={`/update-model/${model._id}`}
+                className="btn btn-primary rounded-full bg-linear-to-r from-pink-500 to-red-600 text-white border-0 hover:from-pink-600 hover:to-red-700"
               >
                 Update Model
               </Link>
@@ -157,7 +157,7 @@ const HabitDetails = () => {
               </button> */}
               <button
                 onClick={handleDelete}
-                className="btn rounded-2xl bg-purple-500 text-white"
+                className="btn btn-outline rounded-full border-gray-300 hover:border-pink-500 hover:text-pink-600"
               >
                 Delete
               </button>
