@@ -12,8 +12,6 @@ import { MdGppGood } from "react-icons/md";
 import { SiGnuprivacyguard } from "react-icons/si";
 
 
-
-
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
     

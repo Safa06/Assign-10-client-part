@@ -10,7 +10,7 @@ import { AuthContext } from "../context/AuthContext";
 import logo from "../assets/logo.jpg";
 import { MdGppGood } from "react-icons/md";
 import { SiGnuprivacyguard } from "react-icons/si";
-
+import Typewriter from "typewriter-effect";
 
 
 
@@ -171,7 +171,15 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      
+      <div>
+              <Typewriter
+                options={{
+                  strings: ["Welcome to Habit Tracker !!"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
     </div>
   );
 };

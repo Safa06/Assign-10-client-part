@@ -4,10 +4,13 @@ import slideImg2 from "../assets/slider-2.jpg";
 import slideImg3 from "../assets/slider-3.jpg";
 import Typewriter from "typewriter-effect";
 
+
+
+
 const BannerSlider = () => {
   return (
     <div>
-      <div style={{ fontFamily: "monospace", fontSize: "3em", color: "Pink", textAlign: "center" }}>
+      <div>
         <Typewriter
           options={{
             strings: ["Welcome to Habit Tracker !!"],

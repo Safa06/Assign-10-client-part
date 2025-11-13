@@ -171,7 +171,15 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      
+      <div>
+              <Typewriter
+                options={{
+                  strings: ["Welcome to Habit Tracker !!"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
     </div>
   );
 };

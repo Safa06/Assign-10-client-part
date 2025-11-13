@@ -7,7 +7,7 @@ import Typewriter from "typewriter-effect";
 const BannerSlider = () => {
   return (
     <div>
-      <div style={{ fontFamily: "monospace", fontSize: "3em", color: "Pink", textAlign: "center" }}>
+      <div style={{ fontFamily: "monospace", fontSize: "2em", color: "blue", textAlign }}>
         <Typewriter
           options={{
             strings: ["Welcome to Habit Tracker !!"],

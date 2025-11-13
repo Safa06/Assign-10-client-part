@@ -274,7 +274,6 @@ const HabitDetails = () => {
 
     const updatedHistory = [...(model.completionHistory || []), new Date()];
 
-
     fetch(`http://localhost:3000/all_habits/${model._id}`, {
       method: "PUT",
       headers: {

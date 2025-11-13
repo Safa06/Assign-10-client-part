@@ -61,7 +61,7 @@ const MyHabit = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setModels(data.result || []);
+        setModels(data);
         setLoading(false);
       })
       .catch((err) => console.log(err));

@@ -43,7 +43,7 @@
 
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../Loading/Loading";
 
@@ -61,7 +61,7 @@ const MyHabit = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setModels(data.result || []);
+        setModels(data);
         setLoading(false);
       })
       .catch((err) => console.log(err));

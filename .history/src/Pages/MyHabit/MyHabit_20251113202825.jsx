@@ -43,7 +43,7 @@
 
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../Loading/Loading";
 
@@ -52,7 +52,6 @@ const MyHabit = () => {
   const [models, setModels] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch user's habits
   useEffect(() => {
     if (!user) return;
 
@@ -61,15 +60,14 @@ const MyHabit = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        setModels(data.result || []);
+        setModels(data);
         setLoading(false);
       })
       .catch((err) => console.log(err));
   }, [user]);
 
-  // Calculate current streak
   const calculateStreak = (completionHistory = []) => {
-    if (!completionHistory.length) return 0;
+    if (completionHistory.length === 0) return 0;
 
     const sortedDates = completionHistory
       .map((d) => new Date(d).setHours(0, 0, 0, 0))
@@ -80,10 +78,11 @@ const MyHabit = () => {
     today.setHours(0, 0, 0, 0);
 
     for (let date of sortedDates) {
-      if (date === today.getTime() - streak * 86400000) {
+      if (
+        date === today.getTime() ||
+        date === today.getTime() - streak * 86400000
+      ) {
         streak++;
-      } else if (streak === 0 && date === today.getTime()) {
-        streak = 1;
       } else {
         break;
       }
@@ -92,7 +91,6 @@ const MyHabit = () => {
     return streak;
   };
 
-  // Mark habit complete
   const handleMarkComplete = (model) => {
     const today = new Date().setHours(0, 0, 0, 0);
 
@@ -117,7 +115,6 @@ const MyHabit = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        // Update state immediately
         setModels((prev) =>
           prev.map((m) =>
             m._id === model._id
@@ -134,7 +131,6 @@ const MyHabit = () => {
       .catch((err) => console.log(err));
   };
 
-  // Delete habit
   const handleDelete = (model) => {
     Swal.fire({
       title: "Are you sure?",
@@ -166,7 +162,7 @@ const MyHabit = () => {
     <div className="max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
       <h1 className="text-3xl font-bold mb-6">My Habits</h1>
       <div className="overflow-x-auto">
-        <table className="table-auto w-full border border-gray-300">
+        <table className="table-auto w-full border-collapse border border-gray-300">
           <thead>
             <tr className="bg-gray-100">
               <th className="border p-2 text-left">Title</th>

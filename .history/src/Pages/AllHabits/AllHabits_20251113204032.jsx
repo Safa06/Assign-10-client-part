@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router";
 import { ModelCard } from "../../components/ModelCard";
-import { useState } from "react";
 
 const AllHabits = () => {
   const data = useLoaderData();
@@ -11,7 +10,7 @@ const AllHabits = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search_text = e.target.search.value;
-    //console.log(search_text);
+    console.log(search_text);
     setLoading(true);
 
     fetch(`https://localhost:3000/search?search=${search_text}`)
@@ -34,7 +33,7 @@ const AllHabits = () => {
         onSubmit={handleSearch}
         className=" mt-5 mb-10 flex gap-2 justify-center"
       >
-        <label className="input rounded-2xl ">
+        <label className="input rounded-full ">
           <svg
             className="h-[1em] opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +58,7 @@ const AllHabits = () => {
       </form>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-12 my-5 w-11/12 mx-auto">
-        {models.map((model) => (
+        {data.map((model) => (
           <ModelCard key={model._id} model={model} />
         ))}
       </div>

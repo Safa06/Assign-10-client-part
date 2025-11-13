@@ -12,8 +12,6 @@ import { MdGppGood } from "react-icons/md";
 import { SiGnuprivacyguard } from "react-icons/si";
 
 
-
-
 const Navbar = () => {
     const { user, signOutUser } = use(AuthContext);
     
@@ -171,7 +169,15 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      
+      <div>
+              <Typewriter
+                options={{
+                  strings: ["Welcome to Habit Tracker !!"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
     </div>
   );
 };

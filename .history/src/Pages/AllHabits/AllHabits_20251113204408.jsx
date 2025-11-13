@@ -11,7 +11,7 @@ const AllHabits = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search_text = e.target.search.value;
-    //console.log(search_text);
+    console.log(search_text);
     setLoading(true);
 
     fetch(`https://localhost:3000/search?search=${search_text}`)
