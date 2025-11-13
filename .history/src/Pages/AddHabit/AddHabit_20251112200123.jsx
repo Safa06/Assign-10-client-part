@@ -3,8 +3,6 @@ import { AuthContext } from "../../context/AuthContext";
 import React, { useState } from "react";
 import TimePicker from "react-time-picker";
 
-
-
 const AddHabit = () => {
   const { user } = use(AuthContext);
 
@@ -21,7 +19,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -87,22 +85,15 @@ const AddHabit = () => {
             </select>
           </div>
 
-
-          
-
-
-    <div>
-      <label className="block mb-2">Reminder Time</label>
-      <TimePicker
-        onChange={setTime}
-        value={time}
-        disableClock={true}
-        className="border rounded"
-      />
-    </div>
- 
-
-
+          <div>
+            <label className="block mb-2">Reminder Time</label>
+            <TimePicker
+              onChange={setTime}
+              value={time}
+              disableClock={true}
+              className="border rounded"
+            />
+          </div>
 
           {/* image URL */}
           <div>
@@ -116,13 +107,11 @@ const AddHabit = () => {
             />
           </div>
 
-          
           {/* read only creator name and email */}
           <div className="text-sm text-gray-600">
             Creator: {user?.displayName} ({user?.email})
           </div>
 
-          
           {/* Add Button */}
           <button
             type="submit"

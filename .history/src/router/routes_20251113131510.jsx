@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/6_habits"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/6_habits"),
       },
       {
         path: "/all-habits",
         element: <AllHabits />,
-        loader: () => fetch("http://localhost:3000/all_habits"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/all_habits"),
       },
       {
         path: "/profile",
@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/models/${params.id}`,{
+          fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`,{
     headers: {
     authorization: }}),
       },
@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/models/${params.id}`),
+          fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`),
       },
       {
         path: "/auth/login",

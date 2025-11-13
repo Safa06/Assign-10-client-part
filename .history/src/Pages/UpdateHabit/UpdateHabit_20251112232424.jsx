@@ -3,8 +3,6 @@ import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";
 
-
-
 const UpdateModel = () => {
   const data = useLoaderData();
   //console.log(data)
@@ -24,7 +22,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -37,8 +35,8 @@ const UpdateModel = () => {
         toast.success("Successfully updated!");
       })
       .catch((err) => {
-          console.log(err);
-          toast.error('Something is fishy !')
+        console.log(err);
+        toast.error("Something is fishy !");
       });
   };
 
@@ -51,14 +49,14 @@ const UpdateModel = () => {
           style={{ fontSize: "2em" }}
           repeat={Infinity}
         />
-          </h2>
-          <div className="card-body p-6 relative">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                  
-
+      </h2>
+      <div className="card-body p-6 relative">
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Field */}
           <div>
-            <label className="label text-lg font-semibold mb-2">Habit Title</label>
+            <label className="label text-lg font-semibold mb-2">
+              Habit Title
+            </label>
             <input
               type="text"
               defaultValue={model.name}

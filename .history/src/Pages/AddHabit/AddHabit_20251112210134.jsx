@@ -19,7 +19,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch("http://localhost:3000/all_habits", {
+    fetch("https://habit-ten-xi.vercel.app/all_habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,9 +40,6 @@ const AddHabit = () => {
       <div className="card-body p-6 relative">
         <h2 className="text-2xl font-bold text-center mb-6">Add Habit Page</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-
-
-
           {/* Habit Name Field */}
           <div>
             <label className="label font-medium">Habit Name</label>
@@ -88,7 +85,6 @@ const AddHabit = () => {
             </select>
           </div>
 
-          
           {/* time picker of react */}
           <div>
             <label className="block mb-2">Reminder Time</label>

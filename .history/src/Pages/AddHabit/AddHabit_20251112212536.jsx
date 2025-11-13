@@ -21,7 +21,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch('http://localhost:3000/all_habits', {
+    fetch('https://habit-ten-xi.vercel.app/all_habits', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

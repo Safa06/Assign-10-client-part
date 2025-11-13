@@ -21,7 +21,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -34,8 +34,8 @@ const UpdateModel = () => {
         toast.success("Successfully updated!");
       })
       .catch((err) => {
-          console.log(err);
-          toast.error('Something is fishy !')
+        console.log(err);
+        toast.error("Something is fishy !");
       });
   };
 
@@ -43,9 +43,7 @@ const UpdateModel = () => {
     <div className="card bg-base-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
       <div className="card-body p-6 relative">
         <h2 className="text-2xl font-bold text-center mb-6">Update Model</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                  
-                  
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Field */}
           <div>
             <label className="label font-medium">Name</label>

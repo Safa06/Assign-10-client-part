@@ -12,7 +12,7 @@ const HabitDetails = () => {
   const { user } = use(AuthContext);
 //   const [refetch, setRefetch] = useState(false);
 
-    const res = await fetch(`http://localhost:3000/all_habits/${id}`);
+    const res = await fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`);
     
   useEffect(() => {
     fetch(`https://localhost:3000/all_habits/${id}`, {

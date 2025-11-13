@@ -5,7 +5,6 @@ import TimePicker from "react-time-picker";
 import toast from "react-hot-toast";
 import { TypeAnimation } from "react-type-animation";
 
-
 const AddHabit = () => {
   const { user } = use(AuthContext);
   const [time, setTime] = useState("");
@@ -22,7 +21,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch('http://localhost:3000/all_habits', {
+    fetch("https://habit-ten-xi.vercel.app/all_habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,11 +31,11 @@ const AddHabit = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success('Habit is added successfully !')
+        toast.success("Habit is added successfully !");
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Something is fishy !')
+        toast.error("Something is fishy !");
       });
   };
 
@@ -109,7 +108,7 @@ const AddHabit = () => {
             <TimePicker
               onChange={setTime}
               //value={time}
-              
+
               disableClock={true}
               className=" rounded-2xl  border-2 border-pink-800"
             />

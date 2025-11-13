@@ -21,7 +21,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

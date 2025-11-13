@@ -22,7 +22,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -121,9 +121,8 @@ const UpdateModel = () => {
           {/* read only creator name and email */}
           <div className="text-md font-bold text-gray-500">
             Creator: {user?.displayName} ({user?.email})
-                  </div>
-                  
-                  
+          </div>
+
           {/* Submit Button */}
           <button
             type="submit"

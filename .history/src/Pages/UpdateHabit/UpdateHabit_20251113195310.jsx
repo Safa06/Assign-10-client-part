@@ -1,13 +1,13 @@
 import toast from "react-hot-toast";
-import { useLoaderData,use } from "react-router";
+import { useLoaderData, use } from "react-router";
 import { use } from "react";
 import Swal from "sweetalert2";
 import { TypeAnimation } from "react-type-animation";
 import { AuthContext } from "../../context/AuthContext";
 
 const UpdateHabit = () => {
-    const data = useLoaderData();
-    const { user } = use(AuthContext);
+  const data = useLoaderData();
+  const { user } = use(AuthContext);
   //console.log(data)
   const model = data;
   const { id } = useParams();
@@ -26,7 +26,7 @@ const UpdateHabit = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const UpdateHabit = () => {
             </label>
             <input
               type="text"
-              defaultValue={model?.title|| ""}
+              defaultValue={model?.title || ""}
               name="title"
               required
               className="input w-full rounded-2xl  border-2 border-pink-800"
@@ -77,7 +77,7 @@ const UpdateHabit = () => {
               Habit Description
             </label>
             <textarea
-              defaultValue={model?.description|| ""}
+              defaultValue={model?.description || ""}
               name="description"
               required
               rows="3"

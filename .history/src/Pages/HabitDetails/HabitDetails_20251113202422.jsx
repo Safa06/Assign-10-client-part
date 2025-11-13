@@ -12,9 +12,8 @@ const HabitDetails = () => {
   const { user } = use(AuthContext);
   //   const [refetch, setRefetch] = useState(false);
 
-
   useEffect(() => {
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -27,7 +26,6 @@ const HabitDetails = () => {
         setLoading(false);
       });
   }, [user, id]);
-
 
   //progress
 
@@ -44,7 +42,8 @@ const HabitDetails = () => {
   };
 
   const calculateStreak = () => {
-    if (!model?.completionHistory || model.completionHistory.length === 0) return 0;
+    if (!model?.completionHistory || model.completionHistory.length === 0)
+      return 0;
 
     const sortedDates = model.completionHistory
       .map((d) => new Date(d).setHours(0, 0, 0, 0))
@@ -55,7 +54,10 @@ const HabitDetails = () => {
     today.setHours(0, 0, 0, 0);
 
     for (let date of sortedDates) {
-      if (date === today.getTime() || date === today.getTime() - streak * 86400000) {
+      if (
+        date === today.getTime() ||
+        date === today.getTime() - streak * 86400000
+      ) {
         streak++;
       } else {
         break;
@@ -70,7 +72,11 @@ const HabitDetails = () => {
     const today = new Date().setHours(0, 0, 0, 0);
 
     // Prevent duplicate entry for today
-    if (model.completionHistory?.some((d) => new Date(d).setHours(0, 0, 0, 0) === today)) {
+    if (
+      model.completionHistory?.some(
+        (d) => new Date(d).setHours(0, 0, 0, 0) === today
+      )
+    ) {
       Swal.fire("Already Completed!", "You have already marked today.", "info");
       return;
     }
@@ -86,7 +92,7 @@ const HabitDetails = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/all_habits/${model._id}`, {
+          fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -104,15 +110,14 @@ const HabitDetails = () => {
               });
             })
             .catch((err) => {
-              (err)
+              err;
             });
         }
       });
     };
 
-
     if (loading) {
-      return <Loading></Loading>
+      return <Loading></Loading>;
     }
 
     return (
@@ -136,7 +141,6 @@ const HabitDetails = () => {
                 <div className="badge badge-lg badge-outline text-pink-600 border-pink-600 font-medium">
                   {model.category}
                 </div>
-
               </div>
 
               <div className="badge badge-lg badge-outline text-green-600 border-green-600 font-medium">
@@ -147,7 +151,6 @@ const HabitDetails = () => {
                 {model.description}
               </p>
 
-            
               <div className="mt-4">
                 <div className="w-full bg-gray-200 rounded-full h-4">
                   <div
@@ -155,10 +158,10 @@ const HabitDetails = () => {
                     style={{ width: `${calculateProgress()}%` }}
                   ></div>
                 </div>
-                <p className="text-sm mt-1 text-gray-500">{calculateProgress()}% completed in last 30 days</p>
+                <p className="text-sm mt-1 text-gray-500">
+                  {calculateProgress()}% completed in last 30 days
+                </p>
               </div>
-
-
 
               <div className="flex gap-3 mt-6">
                 <Link
@@ -174,7 +177,6 @@ const HabitDetails = () => {
                 >
                   Mark Complete
                 </button>
-
 
                 <button
                   onClick={handleDelete}

@@ -18,50 +18,50 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/latest-models"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/latest-models"),
       },
       {
         path: "/all-models",
         element: <AllModels />,
-        loader: () => fetch("http://localhost:3000/models"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/models"),
       },
-    //   {
-    //     path: "/profile",
-    //     element: (
-    //       <PrivateRoute>
-    //         <Profile />
-    //       </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: "/add-model",
-    //     element: (
-    //       <PrivateRoute>
-    //         <AddModel />
-    //       </PrivateRoute>
-    //     ),
-    //   },
-    //   {
-    //     path: "/model-details/:id",
-    //     element: (
-    //       <PrivateRoute>
-    //         <ModelDetails />
-    //       </PrivateRoute>
-    //     ),
-    //     loader: ({ params }) =>
-    //       fetch(`http://localhost:3000/models/${params.id}`),
-    //   },
+      //   {
+      //     path: "/profile",
+      //     element: (
+      //       <PrivateRoute>
+      //         <Profile />
+      //       </PrivateRoute>
+      //     ),
+      //   },
+      //   {
+      //     path: "/add-model",
+      //     element: (
+      //       <PrivateRoute>
+      //         <AddModel />
+      //       </PrivateRoute>
+      //     ),
+      //   },
+      //   {
+      //     path: "/model-details/:id",
+      //     element: (
+      //       <PrivateRoute>
+      //         <ModelDetails />
+      //       </PrivateRoute>
+      //     ),
+      //     loader: ({ params }) =>
+      //       fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`),
+      //   },
 
-    //   {
-    //     path: "/update-model/:id",
-    //     element: (
-    //       <PrivateRoute>
-    //         <UpdateModel />
-    //       </PrivateRoute>
-    //     ),
-    //     loader: ({ params }) =>
-    //       fetch(`http://localhost:3000/models/${params.id}`),
-    //   },
+      //   {
+      //     path: "/update-model/:id",
+      //     element: (
+      //       <PrivateRoute>
+      //         <UpdateModel />
+      //       </PrivateRoute>
+      //     ),
+      //     loader: ({ params }) =>
+      //       fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`),
+      //   },
       {
         path: "/Auth/login",
         element: <Login />,

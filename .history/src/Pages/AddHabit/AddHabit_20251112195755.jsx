@@ -17,7 +17,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -95,13 +95,11 @@ const AddHabit = () => {
             />
           </div>
 
-          
           {/* read only creator name and email */}
           <div className="text-sm text-gray-600">
             Creator: {user?.displayName} ({user?.email})
           </div>
 
-          
           {/* Add Button */}
           <button
             type="submit"

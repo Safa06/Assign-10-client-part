@@ -21,7 +21,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -34,8 +34,8 @@ const UpdateModel = () => {
         toast.success("Successfully updated!");
       })
       .catch((err) => {
-          console.log(err);
-          toast.error()
+        console.log(err);
+        toast.error();
       });
   };
 

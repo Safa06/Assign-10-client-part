@@ -6,8 +6,8 @@ import { TypeAnimation } from "react-type-animation";
 import { AuthContext } from "../../context/AuthContext";
 
 const UpdateModel = () => {
-    const data = useLoaderData();
-    const { user } = use(AuthContext);
+  const data = useLoaderData();
+  const { user } = use(AuthContext);
   //console.log(data)
   const model = data.result;
 
@@ -25,7 +25,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

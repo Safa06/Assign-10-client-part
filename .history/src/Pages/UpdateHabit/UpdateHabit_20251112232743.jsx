@@ -22,7 +22,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -67,7 +67,6 @@ const UpdateModel = () => {
             />
           </div>
 
-                  
           {/* Description Textarea */}
           <div>
             <label className="label text-lg font-semibold mb-2 ">
@@ -83,7 +82,6 @@ const UpdateModel = () => {
             ></textarea>
           </div>
 
-                  
           {/* Category Dropdown */}
           <div>
             <label className="label font-medium">Category</label>

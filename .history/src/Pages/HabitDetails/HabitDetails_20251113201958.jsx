@@ -14,7 +14,7 @@ const HabitDetails = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -92,7 +92,7 @@ const HabitDetails = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:3000/all_habits/${model._id}`, {
+          fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",

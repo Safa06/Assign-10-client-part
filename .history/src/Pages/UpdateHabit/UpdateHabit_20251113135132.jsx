@@ -25,7 +25,7 @@ const UpdateHabit = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/all-habits/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all-habits/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

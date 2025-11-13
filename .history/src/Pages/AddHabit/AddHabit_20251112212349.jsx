@@ -20,7 +20,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch('http://localhost:3000/all_habits', {
+    fetch("https://habit-ten-xi.vercel.app/all_habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,17 +30,19 @@ const AddHabit = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success('Habit is added successfully !')
+        toast.success("Habit is added successfully !");
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Something is fishy !')
+        toast.error("Something is fishy !");
       });
   };
 
   return (
     <div className="card border-2 border-pink-800 bg-pink-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
-      <h2 className="text-2xl font-bold text-center mb-8 mt-10">Add Habit Page</h2>
+      <h2 className="text-2xl font-bold text-center mb-8 mt-10">
+        Add Habit Page
+      </h2>
       <div className="card-body p-6 relative">
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Habit Name Field */}

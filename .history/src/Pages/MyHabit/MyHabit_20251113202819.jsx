@@ -3,15 +3,13 @@
 // import { ModelCard } from "../../components/ModelCard";
 // import Loading from "../Loading/Loading";
 
-
-
 // const MyHabit = () => {
 //   const { user } = use(AuthContext);
 //   const [models, setModels] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:3000/my-habit?email=${user.email}`, {
+//     fetch(`https://habit-ten-xi.vercel.app/my-habit?email=${user.email}`, {
 //       headers: {
 //         authorization: `Bearer ${user.accessToken}`,
 //       },

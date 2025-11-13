@@ -17,7 +17,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const AddHabit = () => {
             type="submit"
             className="btn w-full text-white mt-6 rounded-full bg-linear-to-r from-pink-500 to-red-600 hover:from-pink-600 hover:to-red-700"
           >
-            Add 
+            Add
           </button>
         </form>
       </div>

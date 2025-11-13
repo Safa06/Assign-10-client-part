@@ -22,7 +22,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch('http://localhost:3000/all_habits', {
+    fetch("https://habit-ten-xi.vercel.app/all_habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,11 +32,11 @@ const AddHabit = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success('Habit is added successfully !')
+        toast.success("Habit is added successfully !");
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Something is fishy !')
+        toast.error("Something is fishy !");
       });
   };
 
@@ -102,17 +102,12 @@ const AddHabit = () => {
           </div>
 
           {/* time picker of react */}
-          
-            <h2 className="text-gray-500 font-semibold  text-lg mb-2">
-              Reminder Time
-            </h2>
 
-            <TimePicker
-              
-              value={time}
-              onChange={(newTime) => setTime(newTime)}
-            />
-         
+          <h2 className="text-gray-500 font-semibold  text-lg mb-2">
+            Reminder Time
+          </h2>
+
+          <TimePicker value={time} onChange={(newTime) => setTime(newTime)} />
 
           {/* image URL */}
           <div>

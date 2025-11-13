@@ -22,7 +22,7 @@ const UpdateModel = () => {
     //1. updateOne
     // 2. updateMany
 
-    fetch(`http://localhost:3000/models/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/models/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -51,9 +51,7 @@ const UpdateModel = () => {
         />
       </h2>
       <div className="card-body p-6 relative">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                  
-                  
+        <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Field */}
           <div>
             <label className="label text-lg font-semibold mb-2">

@@ -10,8 +10,7 @@ const HabitDetails = () => {
   const [model, setModel] = useState({});
   const [loading, setLoading] = useState(true);
   const { user } = use(AuthContext);
-//   const [refetch, setRefetch] = useState(false);
-
+  //   const [refetch, setRefetch] = useState(false);
 
   useEffect(() => {
     fetch(`https://localhost:3000/all_habits/${id}`, {
@@ -39,7 +38,7 @@ const HabitDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/all_habits/${model._id}`, {
+        fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -57,58 +56,58 @@ const HabitDetails = () => {
             });
           })
           .catch((err) => {
-            (err)
+            err;
           });
       }
     });
   };
 
-//   const handleDownload = () => {
-//     const finalModel = {
-//       title: model.name,
-//       downloads: model.downloads,
-//       creatorName: model.created_by,
-//       description: model.description,
-//       image: model.thumbnail,
-//       createdAt: new Date(),
-      
-//     };
+  //   const handleDownload = () => {
+  //     const finalModel = {
+  //       title: model.name,
+  //       downloads: model.downloads,
+  //       creatorName: model.created_by,
+  //       description: model.description,
+  //       image: model.thumbnail,
+  //       createdAt: new Date(),
 
-//     fetch(`https://3d-model-server.vercel.app/downloads/${model._id}`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(finalModel),
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         console.log(data);
-//         toast.success("Successfully downloaded!");
-//         setRefecth(!refetch);
+  //     };
 
-//         // alternative solution of realtime download count update
+  //     fetch(`https://3d-model-server.vercel.app/downloads/${model._id}`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(finalModel),
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         console.log(data);
+  //         toast.success("Successfully downloaded!");
+  //         setRefecth(!refetch);
 
-//         //     fetch(`https://3d-model-server.vercel.app/models/${id}`, {
-//         //   headers: {
-//         //     authorization: `Bearer ${user.accessToken}`,
-//         //   },
-//         // })
-//         //   .then((res) => res.json())
-//         //   .then((data) => {
-//         //     setModel(data.result);
-//         //     console.log(" Api called!")
-//         //     console.log(data);
-//         //     setLoading(false);
-//         //   });
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   };
+  //         // alternative solution of realtime download count update
+
+  //         //     fetch(`https://3d-model-server.vercel.app/models/${id}`, {
+  //         //   headers: {
+  //         //     authorization: `Bearer ${user.accessToken}`,
+  //         //   },
+  //         // })
+  //         //   .then((res) => res.json())
+  //         //   .then((data) => {
+  //         //     setModel(data.result);
+  //         //     console.log(" Api called!")
+  //         //     console.log(data);
+  //         //     setLoading(false);
+  //         //   });
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   };
 
   if (loading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
   return (

@@ -3,15 +3,13 @@
 // import { ModelCard } from "../../components/ModelCard";
 // import Loading from "../Loading/Loading";
 
-
-
 // const MyHabit = () => {
 //   const { user } = use(AuthContext);
 //   const [models, setModels] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
-//     fetch(`http://localhost:3000/my-habit?email=${user.email}`, {
+//     fetch(`https://habit-ten-xi.vercel.app/my-habit?email=${user.email}`, {
 //       headers: {
 //         authorization: `Bearer ${user.accessToken}`,
 //       },
@@ -40,7 +38,6 @@
 
 // export default MyHabit;
 
-
 import { useEffect, useState, useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
@@ -55,7 +52,7 @@ const MyHabit = () => {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:3000/my-habit?email=${user.email}`, {
+    fetch(`https://habit-ten-xi.vercel.app/my-habit?email=${user.email}`, {
       headers: { authorization: `Bearer ${user.accessToken}` },
     })
       .then((res) => res.json())
@@ -105,7 +102,7 @@ const MyHabit = () => {
 
     const updatedHistory = [...(model.completionHistory || []), new Date()];
 
-    fetch(`http://localhost:3000/all_habits/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -142,7 +139,7 @@ const MyHabit = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/all_habits/${model._id}`, {
+        fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         })

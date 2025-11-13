@@ -5,7 +5,6 @@ import TimePicker from "react-time-picker";
 import toast from "react-hot-toast";
 import { TypeAnimation } from "react-type-animation";
 
-
 const AddHabit = () => {
   const { user } = use(AuthContext);
   const [time, setTime] = useState("");
@@ -22,7 +21,7 @@ const AddHabit = () => {
       creatorName: user.creatorName,
     };
 
-    fetch('http://localhost:3000/all_habits', {
+    fetch("https://habit-ten-xi.vercel.app/all_habits", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,24 +31,23 @@ const AddHabit = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        toast.success('Habit is added successfully !')
+        toast.success("Habit is added successfully !");
       })
       .catch((err) => {
         console.log(err);
-        toast.error('Something is fishy !')
+        toast.error("Something is fishy !");
       });
   };
 
   return (
     <div className="card border-2 border-pink-800 bg-pink-100 w-full max-w-md mx-auto shadow-2xl rounded-2xl">
       <h2 className=" text-pink-800 font-bold text-center mb-8 mt-10">
-          <TypeAnimation
-          sequence={["Add habit", 1000,
-            "of yours habit !!", 1000]}
-            speed={50}
-            style={{ fontSize: "2em" }}
-            repeat={Infinity}
-          />
+        <TypeAnimation
+          sequence={["Add habit", 1000, "of yours habit !!", 1000]}
+          speed={50}
+          style={{ fontSize: "2em" }}
+          repeat={Infinity}
+        />
       </h2>
       <div className="card-body p-6 relative">
         <form onSubmit={handleSubmit} className="space-y-4">

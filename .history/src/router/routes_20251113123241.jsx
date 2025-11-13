@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import MainLayout from "../layout/MainLayout";
 import Home from "../Pages/Home/Home";
-import AddHabit from "../Pages/AddHabit/AddHabit"
-import MyHabit from "../Pages/MyHabit/MyHabit"
+import AddHabit from "../Pages/AddHabit/AddHabit";
+import MyHabit from "../Pages/MyHabit/MyHabit";
 import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Registration";
 import PrivateRoute from "./PrivateRoute";
-import ErrorLoading from "../components/ErrorLoading"
+import ErrorLoading from "../components/ErrorLoading";
 import AllHabits from "../Pages/AllHabits/AllHabits";
 import UpdateHabit from "../Pages/UpdateHabit/UpdateHabit";
 
@@ -18,17 +18,17 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    hydrateFallbackElement:<ErrorLoading></ErrorLoading>,
+    hydrateFallbackElement: <ErrorLoading></ErrorLoading>,
     children: [
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:3000/6_habits"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/6_habits"),
       },
       {
         path: "/all-habits",
         element: <AllHabits />,
-        loader: () => fetch("http://localhost:3000/all_habits"),
+        loader: () => fetch("https://habit-ten-xi.vercel.app/all_habits"),
       },
       {
         path: "/profile",
@@ -54,18 +54,18 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-    //   {
-    //     path: "/model-details/:id",
-    //     element: (
-    //       <PrivateRoute>
-    //         <ModelDetails />
-    //       </PrivateRoute>
-    //     ),
-    //     loader: ({ params }) =>
-    //       fetch(`http://localhost:3000/models/${params.id}`,{
-    // headers: {
-    // authorization}}),
-    //   },
+      //   {
+      //     path: "/model-details/:id",
+      //     element: (
+      //       <PrivateRoute>
+      //         <ModelDetails />
+      //       </PrivateRoute>
+      //     ),
+      //     loader: ({ params }) =>
+      //       fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`,{
+      // headers: {
+      // authorization}}),
+      //   },
 
       {
         path: "/update-habit/:id",
@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/models/${params.id}`),
+          fetch(`https://habit-ten-xi.vercel.app/models/${params.id}`),
       },
       {
         path: "/auth/login",
@@ -89,6 +89,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element:<ErrorLoading></ErrorLoading>
-  }
+    element: <ErrorLoading></ErrorLoading>,
+  },
 ]);

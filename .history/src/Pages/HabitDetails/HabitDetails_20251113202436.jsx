@@ -12,9 +12,8 @@
 //   const { user } = use(AuthContext);
 //   //   const [refetch, setRefetch] = useState(false);
 
-
 //   useEffect(() => {
-//     fetch(`http://localhost:3000/all_habits/${id}`, {
+//     fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`, {
 //       headers: {
 //         authorization: `Bearer ${user.accessToken}`,
 //       },
@@ -27,7 +26,6 @@
 //         setLoading(false);
 //       });
 //   }, [user, id]);
-
 
 //   //progress
 
@@ -86,7 +84,7 @@
 //         confirmButtonText: "Yes, delete it!",
 //       }).then((result) => {
 //         if (result.isConfirmed) {
-//           fetch(`http://localhost:3000/all_habits/${model._id}`, {
+//           fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
 //             method: "DELETE",
 //             headers: {
 //               "Content-Type": "application/json",
@@ -109,7 +107,6 @@
 //         }
 //       });
 //     };
-
 
 //     if (loading) {
 //       return <Loading></Loading>
@@ -147,7 +144,6 @@
 //                 {model.description}
 //               </p>
 
-            
 //               <div className="mt-4">
 //                 <div className="w-full bg-gray-200 rounded-full h-4">
 //                   <div
@@ -157,8 +153,6 @@
 //                 </div>
 //                 <p className="text-sm mt-1 text-gray-500">{calculateProgress()}% completed in last 30 days</p>
 //               </div>
-
-
 
 //               <div className="flex gap-3 mt-6">
 //                 <Link
@@ -174,7 +168,6 @@
 //                 >
 //                   Mark Complete
 //                 </button>
-
 
 //                 <button
 //                   onClick={handleDelete}
@@ -192,7 +185,6 @@
 // };
 // export default HabitDetails;
 
-
 import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, useParams } from "react-router";
 import Swal from "sweetalert2";
@@ -209,7 +201,7 @@ const HabitDetails = () => {
   useEffect(() => {
     if (!user) return;
 
-    fetch(`http://localhost:3000/all_habits/${id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${id}`, {
       headers: { authorization: `Bearer ${user.accessToken}` },
     })
       .then((res) => res.json())
@@ -274,7 +266,7 @@ const HabitDetails = () => {
 
     const updatedHistory = [...(model.completionHistory || []), new Date()];
 
-    fetch(`http://localhost:3000/all_habits/${model._id}`, {
+    fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -305,7 +297,7 @@ const HabitDetails = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/all_habits/${model._id}`, {
+        fetch(`https://habit-ten-xi.vercel.app/all_habits/${model._id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
         })

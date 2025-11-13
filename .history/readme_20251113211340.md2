@@ -1,0 +1,8 @@
+●	Readme.md: Add a meaningful readme.md file with the name of your website and a live site URL on client side. Include a minimum of five bullet points to feature your website.  
+
+Name: Habit tracker
+1. this site will show the habits with name, creator name, description
+2. Gives the latest card of habits with proper category
+3.User can have authentic login so nobody can see their data, info
+4. Any habit can be updated, modified, deleted by User
+5. User can add any 

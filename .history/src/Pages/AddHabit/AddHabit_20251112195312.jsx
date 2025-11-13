@@ -17,7 +17,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,6 @@ const AddHabit = () => {
       <div className="card-body p-6 relative">
         <h2 className="text-2xl font-bold text-center mb-6">Add Habit Page</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-
           {/* Habit Name Field */}
           <div>
             <label className="label font-medium">Name</label>

@@ -3,8 +3,6 @@ import { AuthContext } from "../../context/AuthContext";
 import React, { useState } from "react";
 import TimePicker from "react-time-picker";
 
-
-
 const AddHabit = () => {
   const { user } = use(AuthContext);
 
@@ -21,7 +19,7 @@ const AddHabit = () => {
       created_by: user.email,
     };
 
-    fetch("http://localhost:3000/models", {
+    fetch("https://habit-ten-xi.vercel.app/models", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +51,6 @@ const AddHabit = () => {
               placeholder="Enter name"
             />
           </div>
-
           {/* Description Textarea */}
           <div>
             <label className="label font-medium">Habit Description</label>
@@ -65,7 +62,6 @@ const AddHabit = () => {
               placeholder="Enter description"
             ></textarea>
           </div>
-
           {/* Category Dropdown */}
           <div>
             <label className="label font-medium">Category</label>
@@ -86,26 +82,16 @@ const AddHabit = () => {
               <option value="Other">Other</option>
             </select>
           </div>
-
-
-          
-
-
-    <div>
-      <label className="block mb-2">Reminder Time</label>
-      <TimePicker
-        onChange={setTime}
-        value={time}
-        disableClock={true}
-        className="border rounded"
-      />
-    </div>
-  );
-};
-
-
-
-
+          <div>
+            <label className="block mb-2">Reminder Time</label>
+            <TimePicker
+              onChange={setTime}
+              value={time}
+              disableClock={true}
+              className="border rounded"
+            />
+          </div>
+          ); };
           {/* image URL */}
           <div>
             <label className="label font-medium">Upload Image</label>
@@ -117,14 +103,10 @@ const AddHabit = () => {
               placeholder="https://example.com/image.jpg"
             />
           </div>
-
-          
           {/* read only creator name and email */}
           <div className="text-sm text-gray-600">
             Creator: {user?.displayName} ({user?.email})
           </div>
-
-          
           {/* Add Button */}
           <button
             type="submit"
